@@ -15,7 +15,7 @@ export default class Tracker extends Component {
   };
 
   render () {
-      const { render, children } = this.props;
+      const { render, children, component } = this.props;
       let result = null;
 
       if (children) {
@@ -24,6 +24,10 @@ export default class Tracker extends Component {
 
       if (render) {
           result = render(this.state);
+      }
+
+      if (component) {
+          result = React.createElement(component, this.state);
       }
 
       return (
