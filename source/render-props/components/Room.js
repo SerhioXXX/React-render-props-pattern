@@ -20,11 +20,11 @@ export default class Room extends Component {
         return (
             <div className = 'room'>
                 <h1>Поиграем в кошки-мышки!!!</h1>
-                <Tracker render = {
-                    (props_coordinates) => {
+                <Tracker>
+                {(props_coordinates) => {
                         return <Content {...props_coordinates} />
-                    }
-                } />
+                    }}
+                </Tracker>
             </div>
         );
     }
